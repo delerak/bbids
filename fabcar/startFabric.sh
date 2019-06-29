@@ -56,10 +56,6 @@ cat <<EOF
 Total setup execution time : $(($(date +%s) - starttime)) secs ...
 
 Next, use the BBIDS applications to interact with the deployed BBIDS contract.
-The BBIDS applications are available in multiple programming languages.
-Follow the instructions for the programming language of your choice:
-
-JavaScript:
 
   Start by changing into the "javascript" directory:
     cd javascript
@@ -70,17 +66,18 @@ JavaScript:
   Then run the following applications to enroll the admin user, and register a new user
   called user1 which will be used by the other applications to interact with the deployed
   BBIDS contract:
-    node enrollAdmin
-    node registerUser
+    node enrollAdmin  - this is considered the Trusted Node in the BBIDS Architecture
+    node registerUser - this is considered a Participating Node in the BBIDS Architecture
 
   You can run the invoke application as follows. By default, the invoke application will
-  create a new car, but you can update the application to submit other transactions:
+  create a new rule, but you can update the application to submit other transactions:
     node invoke
 
   You can run the query application as follows. By default, the query application will
   return all rules, but you can update the application to evaluate other transactions:
     node query
 
-
+NOTE: Currently everything is hardcoded so you must go into the query/invoke JavaScript
+files in order to adjust their queries or invocations.
 
 EOF

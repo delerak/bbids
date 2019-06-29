@@ -784,10 +784,10 @@ class FabCar extends Contract {
         console.info('============= START : Create Rule ===========');
 
         const rule = {
-            ruleAction,
+            RuleAction,
             docType: 'rule',
             sourceIP,
-            model,
+            protocol,
             sourcePort,
             Direction,
             destIP,
@@ -817,7 +817,7 @@ class FabCar extends Contract {
             if (res.value && res.value.value.toString()) {
                 console.log(res.value.value.toString('utf8'));
 
-                const Key = res.value.key;
+                const Key = res.value.'{print $3}'key;
                 let Record;
                 try {
                     Record = JSON.parse(res.value.value.toString('utf8'));
